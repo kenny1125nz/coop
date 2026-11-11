@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicken Coop Designer</title>
+  <script type="module" crossorigin src="/assets/index-BSFgIgNG.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-Q8kizTMo.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">🐔</span>
+      <div>
+        <h1>Chicken Coop Designer</h1>
+        <p class="sub">Design, size & generate a cut list</p>
+      </div>
+    </div>
+    <div class="toolbar" id="layer-toggles"></div>
+    <div class="actions">
+      <button id="toggle-labels" class="btn active">Labels</button>
+      <button id="cutplan" class="btn">Cut plan</button>
+      <button id="shopping" class="btn">Shopping list</button>
+      <button id="reset-view" class="btn">Reset view</button>
+      <button id="export" class="btn primary">Export cut list (CSV)</button>
+    </div>
+  </header>
+
+  <div id="cutplan-overlay" class="overlay hidden">
+    <div class="overlay-panel">
+      <div class="overlay-head">
+        <h2>Plywood cut plan</h2>
+        <span id="cutplan-summary" class="overlay-summary"></span>
+        <button id="close-cutplan" class="btn">Close</button>
+      </div>
+      <div id="cutplan-body" class="overlay-body"></div>
+    </div>
+  </div>
+
+  <div id="shop-overlay" class="overlay hidden">
+    <div class="overlay-panel">
+      <div class="overlay-head no-print">
+        <h2>Shopping list</h2>
+        <span id="shop-summary" class="overlay-summary"></span>
+        <button id="print-shop" class="btn primary">Print</button>
+        <button id="close-shop" class="btn">Close</button>
+      </div>
+      <div id="shop-body" class="overlay-body shop-body"></div>
+    </div>
+  </div>
+
+  <main class="layout">
+    <aside class="panel controls">
+      <h2>Design</h2>
+      <div id="controls"></div>
+    </aside>
+
+    <section class="viewport-wrap">
+      <canvas id="viewport"></canvas>
+      <div class="hint">Drag to orbit · Scroll to zoom · Right-drag to pan</div>
+    </section>
+
+    <aside class="panel parts">
+      <h2>Parts & specs</h2>
+      <div id="totals" class="totals"></div>
+      <div id="parts-list" class="parts-list"></div>
+    </aside>
+  </main>
+
+</body>
+</html>
